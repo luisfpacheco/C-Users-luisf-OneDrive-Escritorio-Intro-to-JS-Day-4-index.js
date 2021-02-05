@@ -1,94 +1,305 @@
 /*
-ASSIGNMENT RULES
-- All the answers must be in JavaScript
-- The solution must be pushed to the repository and be available for the tutors by the end of the day
-- You can ask for tutor's help
-- You can google / use StackOverflow BUT we suggest you to use just the material provided
+    ASSIGNMENT RULES
+    - All the answers must be in JavaScript
+    - The solution must be pushed to the repository and be available for the tutors by the end of the day
+    - You can ask for tutor's help
+    - You can google / use StackOverflow BUT we suggest you to use just the material provided
+    - You can test your code in a separate file or commenting the single parts in this file or directly in the Developer Console or in the Node Console.
+    - Complete as many exercise that you can
+    - Publish them into your own GitHub account and upload repository link on Eduflow before 16.30 (Berlin Time) 
 */
 
-/* EXERCISE 1
-Write a function "area" which receives 2 parameters (l1,l2) and calculates the area of the associated rectangle.
+//JS Basics
+
+/* Ex.A
+   Create a variable test that contains a string.
 */
-const area = function (base, hight){
-    const result = base*hight
-    return result
-}
-const areaofrectangle = area(11, 12)
-console.log("the area of the rectangle is:", areaofrectangle)
-
-
-/* EXERCISE 2
-Write a function "crazySum" which receives two integers. 
-It should return the sum of those two values, 
-but if the two values are the same then it should return their sum multiplied by 3.
+const variable = ("this is a string")
+console.log (variable)
+/* Ex.B
+    Create a variable sum that contains the result of the sum between 10 and 20.
 */
-
-const crazysum = function (x, y){
-    const sum = x + y
-    if(x===y){
-        const sumMultpliedByThree = sum*3
-        
-        return sumMultpliedByThree
-    }else{
-        
-        return sum
-    }
-}
-
-const sum= crazysum(15, 10)
+const sum = (10 + 20)
 console.log(sum)
-    
-
-
-/* EXERCISE 3
-Write a function "crazyDiff" that computes the absolute difference between a given number and 19. 
-It should return triple their absolute difference if the given number is greater than 19.
+/* Ex.C 
+    Create a variable random that contains a random number between 0 and 20 (should be randomly created at each execution).
+*/
+const variablerandom = Math.random(0, 21)
+console.log(variablerandom) 
+ 
+/* Ex.D
+    Create a variable me containing and object with the current information: name = your name, surname = your surname, age = your age.
 */
 
-/* EXERCISE 4
-Write a function "boundary" which accept an integer n and returns true if n is within 20 and 100 (included) or if it's equal to 400.
+const me = {
+    name: "Luis",
+    surname: "Pacheco",
+    age: "28"
+}
+console.log (me)
+/* Ex.E 
+    Programmatically remove the age property from the previously create object.
+*/
+delete me.age
+console.log (me)
+/* Ex.F 
+   Programmatically add to the object me an array "skills" that contains the programming languages that you know.
+*/
+const skills = ["HTML", "CSS", "Java Script"]
+
+me.skills = [skills],
+
+console.log(me)
+
+/* Ex.G 
+   Programmatically remove the last skill from the array "skills" inside of the "me" object.
+*/
+skills.pop("Java Script")
+console.log(me)
+
+// JS Functions
+/* Ex.1
+    Write the function dice that randomize an integer number between 1 and 6.
+*/
+const dice = function(min,max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log (`random numbers: ${dice(1,6)}`)
+
+/* Ex.2 
+    Write the function whoIsBigger that receives 2 numbers and returns the bigger of the two.
 */
 
-/* WRITE YOUR CODE HERE */
-
-/* EXERCISE 5
-Write a function "strivify" which accepts a string.
-It should add the word "Strive" in front of the given string, but if the given string already begins with "Strive", then it should just return the original string.
+/* Ex.3
+    Write the function splitMe that receives a string and returns an array with every word in that string.
+    Ex. splitMe("I love coding") => returns [ "I","Love","Coding"]
 */
 
-/* WRITE YOUR CODE HERE */
+const splitMe = function(name){
+    name: ["my name is luis"]
+    return name
+}
+console.log(`my name is luis: ${splitMe}`)
 
-/* EXERCISE 6
-Write a function "check3and7" which accepts a positive number and check if it is a multiple of 3 or a multiple of 7.
-HINT: Module Operator
+
+
+
+
+/* Ex.4
+    Write the function deleteOne that receives a string and a boolean. If the boolean is true it should return the string without the first letter, otherwise it should remove the last one.
 */
 
-/* WRITE YOUR CODE HERE */
-
-/* EXERCISE 7
-Write a function "reverseString" to programmatically reverse a given string (es.: Strive => evirtS).
+/* Ex.5
+   Write the function onlyLetters that receives a string, removes all the numbers and returns it.
+   Ex.: onlyLetters("I love 123 whatever")  => returns "I love whatever"
 */
 
-/* WRITE YOUR CODE HERE */
-
-/* EXERCISE 8
-Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as a parameter.
+/* Ex.6 
+   Write the function isThisAnEmail that receives a string and returns true if the string is a valid email.
 */
 
-/* WRITE YOUR CODE HERE */
-
-/* EXERCISE 9
-Write a function "cutString" to create a new string without the first and last character of a given string.
+/* Ex.7
+   Write the function whatDayIsIt that should return the current day of the week.
 */
 
-/* WRITE YOUR CODE HERE */
-
-/* EXERCISE 10
-Write a function "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
+/* Ex.8
+    Write the function rollTheDices that receives a numeric input.
+    It should use the Dice function defined in Ex1 and return an object that contains both the sum of all values extracted and the single values of the dicerolls themselves.
+    Example: RollTheDices(3) => returns {
+        sum: 10
+        values: [ 3, 3, 4]
+    }
 */
 
-/* WRITE YOUR CODE HERE */
-
-/* WHEN YOU ARE FINISHED
-Commit and push the code to your personal GitHub repository and share the link to your commit in Eduflow.
+/* Ex.9
+   Write the function howManyDays that receives a date and returns the number of days that has passed since that day.
 */
+
+/* Ex.10
+   Write the function isTodayMyBDay that returns true if it's your birthday, false otherwise.
+*/
+
+// JS Arrays // Objs
+// NOTE: movies array is defined at the end of the file!
+
+/* Ex.11
+   Write the function deleteProp that receives an object and a string, and returns the object after deleting the property with that given name.
+*/
+
+/* Ex.12 
+    Write the function olderMovie that finds the older movie in the array.
+*/
+
+/* Ex.13
+    Write the function countMovies that returns the number of movies into the array.
+*/
+
+/* Ex.14
+    Write the function onlyTitles that creates an array with only the titles of the movies.
+*/
+
+/* Ex.15
+   Write the function onlyThisMillennium that returns only the movies produced in this millennium.
+*/
+
+/* Ex.16 
+    Write the function getMovieById that receives an id and returns the movie with the given id.
+*/
+
+/* Ex.17
+    Write the function sumYears that returns the sum of the years the movie has been produced.
+*/
+
+/* Ex.18
+    Write the function searchMovie that receives a string and returns all the movies with that string in the title.
+*/
+
+/* Ex.19
+    Write the function searchAndDivide that receives a string and returns an object with an array "match" with all the movies that contains the given string in the title, and another array "nonMatch" with all the other movies.
+*/
+
+/* Ex.20
+   Write the function deleteX that receives a number and returns an array without the element in the given position.
+*/
+
+// [EXTRAS] JS Advanced
+
+/* Ex.21
+  Create a function halfTree that recives the height creates an "*" half tree with that height.
+  Example:
+  halfTree(3)
+  *
+  **
+  ***
+*/
+
+/* Ex.22 
+  Create a function tree that receives the height and creates an "*" tree with that height.
+  Example: 
+  tree(3)
+    *  
+   *** 
+  *****
+*/
+
+/* Ex.23
+  Create a function isItPrime that receives a number and returns true if the number is a prime number.
+*/
+
+/* Movies array is an example array, used for the exs. Don't change it :)  */
+/* const movies = [
+    {
+      Title: "The Lord of the Rings: The Fellowship of the Ring",
+      Year: "2001",
+      imdbID: "tt0120737",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
+    },
+    {
+      Title: "The Lord of the Rings: The Return of the King",
+      Year: "2003",
+      imdbID: "tt0167260",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+    },
+    {
+      Title: "The Lord of the Rings: The Two Towers",
+      Year: "2002",
+      imdbID: "tt0167261",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+    },
+    {
+      Title: "Lord of War",
+      Year: "2005",
+      imdbID: "tt0399295",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+    },
+    {
+      Title: "Lords of Dogtown",
+      Year: "2005",
+      imdbID: "tt0355702",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BNDBhNGJlOTAtM2ExNi00NmEzLWFmZTQtYTZhYTRlNjJjODhmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+    },
+    {
+      Title: "The Lord of the Rings",
+      Year: "1978",
+      imdbID: "tt0077869",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BOGMyNWJhZmYtNGQxYi00Y2ZjLWJmNjktNTgzZWJjOTg4YjM3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+    },
+    {
+      Title: "Lord of the Flies",
+      Year: "1990",
+      imdbID: "tt0100054",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BOTI2NTQyODk0M15BMl5BanBnXkFtZTcwNTQ3NDk0NA@@._V1_SX300.jpg",
+    },
+    {
+      Title: "The Lords of Salem",
+      Year: "2012",
+      imdbID: "tt1731697",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BMjA2NTc5Njc4MV5BMl5BanBnXkFtZTcwNTYzMTcwOQ@@._V1_SX300.jpg",
+    },
+    {
+      Title: "Greystoke: The Legend of Tarzan, Lord of the Apes",
+      Year: "1984",
+      imdbID: "tt0087365",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg",
+    },
+    {
+      Title: "Lord of the Flies",
+      Year: "1963",
+      imdbID: "tt0057261",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BOGEwYTlhMTgtODBlNC00ZjgzLTk1ZmEtNmNkMTEwYTZiM2Y0XkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg",
+    },
+    {
+      Title: "The Avengers",
+      Year: "2012",
+      imdbID: "tt0848228",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+    },
+    {
+      Title: "Avengers: Infinity War",
+      Year: "2018",
+      imdbID: "tt4154756",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+    },
+    {
+      Title: "Avengers: Age of Ultron",
+      Year: "2015",
+      imdbID: "tt2395427",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg",
+    },
+    {
+      Title: "Avengers: Endgame",
+      Year: "2019",
+      imdbID: "tt4154796",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
+    },
+  ] */
